@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>招商对接 | 罗店产业招商网</title>
+  <meta name="description" content="意向企业提交招商对接表单：企业名称、行业、意向载体、需求、联系人、电话，招商顾问将尽快与您联系。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-logo">罗</span>
+        <span>
+          <span class="brand-name">罗店产业招商网</span><br>
+          <span class="brand-sub">北上海生物医药产业园 · 美兰湖科创载体</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="打开导航">☰</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="about.html">园区概况</a></li>
+          <li><a href="resources.html">载体资源</a></li>
+          <li><a href="policies.html">产业政策</a></li>
+          <li><a href="companies.html">入驻企业</a></li>
+          <li><a href="activities.html">美兰湖下午茶</a></li>
+          <li><a class="nav-cta" href="contact.html">招商对接</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 面包屑 -->
+  <div class="crumb">
+    <div class="container">
+      <h1>招商对接</h1>
+      <p>提交招商意向，招商顾问将尽快与您联系。</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:flex; justify-content:center;">
+        <form id="leadForm" class="form-card" novalidate>
+          <h2 style="font-size:22px; color:var(--dark); margin-bottom:6px;">意向企业登记</h2>
+          <p style="color:var(--muted); font-size:14px; margin-bottom:22px;">带 <span style="color:#e5484d;">*</span> 为必填项，提交后由招商团队跟进。</p>
+
+          <div class="form-grid">
+            <div class="form-item full">
+              <label for="company">企业名称 <span class="req">*</span></label>
+              <input type="text" id="company" placeholder="请输入企业名称">
+              <span class="form-error">请填写企业名称</span>
+            </div>
+            <div class="form-item">
+              <label for="industry">所属行业 <span class="req">*</span></label>
+              <select id="industry">
+                <option value="">请选择行业</option>
+                <option value="生物医药">生物医药</option>
+                <option value="医疗器械">医疗器械</option>
+                <option value="科创研发">科创研发</option>
+                <option value="投资机构">投资机构</option>
+                <option value="其他">其他</option>
+              </select>
+              <span class="form-error">请选择行业</span>
+            </div>
+            <div class="form-item">
+              <label for="carrier">意向载体</label>
+              <select id="carrier">
+                <option value="">请选择（可选）</option>
+              </select>
+            </div>
+            <div class="form-item full">
+              <label for="demand">需求描述</label>
+              <textarea id="demand" placeholder="如：需要 5000 ㎡ 标准厂房用于医疗器械生产；希望了解租金补贴政策等"></textarea>
+            </div>
+            <div class="form-item">
+              <label for="contact">联系人 <span class="req">*</span></label>
+              <input type="text" id="contact" placeholder="请输入联系人姓名">
+              <span class="form-error">请填写联系人</span>
+            </div>
+            <div class="form-item">
+              <label for="phone">联系电话 <span class="req">*</span></label>
+              <input type="tel" id="phone" placeholder="请输入 11 位手机号">
+              <span class="form-error">请填写有效手机号</span>
+            </div>
+          </div>
+
+          <div id="formMsg" class="form-msg"></div>
+          <div style="margin-top:22px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;">提交招商意向</button>
+          </div>
+          <p class="form-tip">当前为静态演示版：表单在本机演示提交。正式上线后，表单将 POST 至 Cloudflare Worker，由 Worker 校验后写入飞书多维表格「招商线索表」。</p>
+        </form>
+      </div>
+
+      <!-- 招商联系 -->
+      <div style="display:flex; justify-content:center; margin-top:44px;">
+        <div class="contact-block" style="width:640px; max-width:100%;">
+          <h3>招商联系</h3>
+          <div class="row"><span class="ico">📞</span><span>招商咨询：021-xxxx-xxxx</span></div>
+          <div class="row"><span class="ico">📧</span><span>招商邮箱：zhaoshang@example.com（示例占位）</span></div>
+          <div class="row"><span class="ico">📍</span><span>园区地址：上海市宝山区罗店镇（示例占位）</span></div>
+          <div class="row"><span class="ico">🕘</span><span>工作时间：周一至周五 9:00-17:30</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">罗店产业招商网</div>
+        <p>北上海生物医药产业园｜罗店美兰湖科创载体<br>面向生物医药、医疗器械、生命健康科创企业的一站式招商服务平台。</p>
+      </div>
+      <div>
+        <h4>快速导航</h4>
+        <ul>
+          <li><a href="about.html">园区概况</a></li>
+          <li><a href="resources.html">载体资源</a></li>
+          <li><a href="policies.html">产业政策</a></li>
+          <li><a href="activities.html">美兰湖下午茶</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>招商联系</h4>
+        <ul>
+          <li>招商咨询：021-xxxx-xxxx</li>
+          <li>园区地址：上海市宝山区罗店镇（示例占位）</li>
+          <li>对接入口：<a href="contact.html">提交招商意向</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 罗店产业招商网 · 本网站为静态演示版，正式数据以罗店方提供为准</div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
