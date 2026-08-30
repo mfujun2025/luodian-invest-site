@@ -45,56 +45,18 @@
   <section class="section">
     <div class="container">
       <div style="display:flex; justify-content:center;">
-        <form id="leadForm" class="form-card" novalidate>
-          <h2 style="font-size:22px; color:var(--dark); margin-bottom:6px;">意向企业登记</h2>
-          <p style="color:var(--muted); font-size:14px; margin-bottom:22px;">带 <span style="color:#e5484d;">*</span> 为必填项，提交后由招商团队跟进。</p>
-
-          <div class="form-grid">
-            <div class="form-item full">
-              <label for="company">企业名称 <span class="req">*</span></label>
-              <input type="text" id="company" placeholder="请输入企业名称">
-              <span class="form-error">请填写企业名称</span>
-            </div>
-            <div class="form-item">
-              <label for="industry">所属行业 <span class="req">*</span></label>
-              <select id="industry">
-                <option value="">请选择行业</option>
-                <option value="生物医药">生物医药</option>
-                <option value="医疗器械">医疗器械</option>
-                <option value="科创研发">科创研发</option>
-                <option value="投资机构">投资机构</option>
-                <option value="其他">其他</option>
-              </select>
-              <span class="form-error">请选择行业</span>
-            </div>
-            <div class="form-item">
-              <label for="carrier">意向载体</label>
-              <select id="carrier">
-                <option value="">请选择（可选）</option>
-              </select>
-            </div>
-            <div class="form-item full">
-              <label for="demand">需求描述</label>
-              <textarea id="demand" placeholder="如：需要 5000 ㎡ 标准厂房用于医疗器械生产；希望了解租金补贴政策等"></textarea>
-            </div>
-            <div class="form-item">
-              <label for="contact">联系人 <span class="req">*</span></label>
-              <input type="text" id="contact" placeholder="请输入联系人姓名">
-              <span class="form-error">请填写联系人</span>
-            </div>
-            <div class="form-item">
-              <label for="phone">联系电话 <span class="req">*</span></label>
-              <input type="tel" id="phone" placeholder="请输入 11 位手机号">
-              <span class="form-error">请填写有效手机号</span>
-            </div>
-          </div>
-
-          <div id="formMsg" class="form-msg"></div>
-          <div style="margin-top:22px;">
-            <button type="submit" class="btn btn-primary" style="width:100%;">提交招商意向</button>
-          </div>
-          <p class="form-tip">当前为静态演示版：表单在本机演示提交。正式上线后，表单将 POST 至 Cloudflare Worker，由 Worker 校验后写入飞书多维表格「招商线索表」。</p>
-        </form>
+        <div class="form-card" style="text-align:center; padding:48px 32px;">
+          <h2 style="font-size:22px; color:var(--dark); margin-bottom:10px;">意向企业登记</h2>
+          <p style="color:var(--muted); font-size:15px; margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.7;">
+            填写企业信息与需求，招商顾问将在 1 个工作日内与您联系。提交信息直接进入罗店招商线索库，由专人跟进。
+          </p>
+          <a href="https://my.feishu.cn/share/base/shrcneb4JUrSGATJrAgLzx0Me4d" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:17px; padding:14px 40px; display:inline-block;">
+            填写招商对接表 →
+          </a>
+          <p style="color:var(--muted); font-size:13px; margin-top:20px;">
+            点击按钮在新窗口打开官方收集表，无需注册登录即可填写
+          </p>
+        </div>
       </div>
 
       <!-- 招商联系 -->
