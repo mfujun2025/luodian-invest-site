@@ -286,6 +286,61 @@
     });
   }
 
+  /* ---------- 旅游列表分页 ---------- */
+  (function initTourismPager() {
+    var grid = document.querySelector('.tourism-grid');
+    var pager = document.getElementById('tourismPager');
+    if (!grid || !pager) return;
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.tourism-card'));
+    var PER_PAGE = 12;
+    var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
+
+    function readPage() {
+      var m = location.hash.match(/page=(\d+)/);
+      var p = m ? parseInt(m[1], 10) : 1;
+      if (isNaN(p) || p < 1) p = 1;
+      return Math.min(p, pages);
+    }
+
+    function buildBtn(label, target, disabled, active) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = label;
+      if (disabled) btn.classList.add('disabled');
+      if (active) btn.classList.add('active');
+      if (!disabled) btn.addEventListener('click', function () { go(target); });
+      return btn;
+    }
+
+    function renderPager(page) {
+      pager.innerHTML = '';
+      pager.appendChild(buildBtn('‹ 上一页', page - 1, page <= 1, false));
+      for (var n = 1; n <= pages; n++) {
+        pager.appendChild(buildBtn(String(n), n, false, n === page));
+      }
+      pager.appendChild(buildBtn('下一页 ›', page + 1, page >= pages, false));
+    }
+
+    function show(page) {
+      var start = (page - 1) * PER_PAGE;
+      var end = start + PER_PAGE;
+      cards.forEach(function (card, i) {
+        card.classList.toggle('is-hidden', i < start || i >= end);
+      });
+      renderPager(page);
+    }
+
+    function go(page) {
+      page = Math.min(pages, Math.max(1, page));
+      if (history.replaceState) { history.replaceState(null, '', '#page=' + page); }
+      show(page);
+      grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    window.addEventListener('hashchange', function () { show(readPage()); });
+    show(readPage());
+  })();
+
   /* ---------- 页面数据初始化 ---------- */
   renderCarriers("carrierGrid");
   renderCompanies("companyGrid");
