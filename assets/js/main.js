@@ -292,7 +292,7 @@
     var pager = document.getElementById('tourismPager');
     if (!grid || !pager) return;
     var cards = Array.prototype.slice.call(grid.querySelectorAll('.tourism-card'));
-    var PER_PAGE = 12;
+    var PER_PAGE = 15;
     var pages = Math.max(1, Math.ceil(cards.length / PER_PAGE));
 
     function readPage() {
