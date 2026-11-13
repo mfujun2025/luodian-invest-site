@@ -336,39 +336,63 @@ table.data-table { width: 100%; border-collapse: collapse; min-width: 680px; }
   .site-header { position: relative; }
 }
 
-/* ---------- 旅游文章卡片（仅 tourism 页作用域） ---------- */
-body.tourism .section { padding: 26px 0; background: transparent; }
-body.tourism section:has(.article-body) > .container {
+/* ---------- 旅游列表小卡片 ---------- */
+.tourism-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.tourism-card {
+  display: flex; flex-direction: column; gap: 10px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 30px 34px;
+  padding: 22px;
+  color: var(--text);
+  transition: transform .2s, box-shadow .2s;
 }
-body.tourism section:has(.article-body) .section-head {
-  text-align: left;
-  max-width: none;
-  margin: 0 0 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
-}
-body.tourism section:has(.article-body) .section-head h2 {
-  font-size: 23px;
-  margin-bottom: 8px;
-}
-body.tourism section:has(.article-body) .tag-line {
+.tourism-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.tourism-card .tag-line {
+  align-self: flex-start;
   display: inline-block;
-  margin-bottom: 8px;
   background: var(--green-light);
   color: var(--green-dark);
-  padding: 3px 12px;
-  border-radius: 999px;
-  letter-spacing: 1px;
+  font-size: 13px; font-weight: 600; letter-spacing: 1px;
+  padding: 3px 12px; border-radius: 999px; margin-bottom: 2px;
 }
-body.tourism .article-body p { margin-bottom: 14px; }
-body.tourism .article-body p:last-child { margin-bottom: 0; }
+.tourism-card h3 { font-size: 17px; line-height: 1.45; font-weight: 700; color: var(--dark); }
+.tourism-card p {
+  color: var(--muted); font-size: 14px; line-height: 1.7;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tourism-card .read-more { margin-top: auto; color: var(--green-dark); font-size: 14px; font-weight: 600; }
 
+/* ---------- 旅游文章详情页 ---------- */
+.article-page {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 34px;
+}
+.article-page .section-head {
+  text-align: left; max-width: none; margin: 0 0 16px;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border);
+}
+.article-page .section-head h2 { font-size: 24px; margin-bottom: 8px; }
+.article-page .tag-line {
+  display: inline-block; margin-bottom: 8px;
+  background: var(--green-light); color: var(--green-dark);
+  padding: 3px 12px; border-radius: 999px; letter-spacing: 1px;
+}
+.article-page .article-body p { margin-bottom: 14px; }
+.article-page .article-body p:last-child { margin-bottom: 0; }
+.article-nav { margin-top: 22px; }
+.crumb-back { color: rgba(255, 255, 255, .85); }
+.crumb-back:hover { color: #fff; }
+
+@media (max-width: 960px) {
+  .tourism-grid { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 720px) {
-  body.tourism section:has(.article-body) > .container { padding: 22px 20px; }
-  body.tourism section:has(.article-body) .section-head h2 { font-size: 20px; }
+  .tourism-grid { grid-template-columns: 1fr; }
+  .article-page { padding: 22px 20px; }
+  .article-page .section-head h2 { font-size: 20px; }
 }
