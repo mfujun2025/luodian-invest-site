@@ -294,7 +294,7 @@ table.data-table { width: 100%; border-collapse: collapse; min-width: 680px; }
 
 /* ---------- 页脚 ---------- */
 .site-footer { background: var(--dark); color: rgba(255,255,255,.72); padding: 46px 0 30px; font-size: 14px; }
-.footer-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
+.footer-inner { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
 .footer-inner h4 { color: #fff; font-size: 15px; margin-bottom: 12px; }
 .footer-inner ul { list-style: none; }
 .footer-inner ul li { margin-bottom: 8px; }
